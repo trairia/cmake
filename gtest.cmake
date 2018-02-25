@@ -30,6 +30,7 @@ macro(define_imported_target target libpath)
   add_dependencies(${target} googletest)
   set_target_properties(${target} PROPERTIES
     IMPORTED_LOCATION ${libpath}/${CMAKE_STATIC_LIBRARY_PREFIX}${target}${CMAKE_STATIC_LIBRARY_SUFFIX}
+    IMPORTED_LOCATION_DEBUG ${libpath}/${CMAKE_STATIC_LIBRARY_PREFIX}${target}d${CMAKE_STATIC_LIBRARY_SUFFIX}
   )
   if (CMAKE_THREAD_LIBS_INIT)
     set_target_properties(${target} PROPERTIES
